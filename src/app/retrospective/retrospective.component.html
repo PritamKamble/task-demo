@@ -1,0 +1,19 @@
+<p (click)="addCard(1)">What went well</p>
+<div *ngFor="let card of type1; index as i;">
+  <textarea [(ngModel)]="type1[i]" cols="30" rows="10"></textarea>
+</div>
+
+<p (click)="addCard(2)">What can be improved</p>
+<div *ngFor="let card of type2; index as i;">
+  <textarea [(ngModel)]="type2[i]" cols="30" rows="10"></textarea>
+</div>
+
+<p (click)="addCard(3)">Start doing</p>
+<div *ngFor="let card of type3; index as i;">
+  <textarea [(ngModel)]="type3[i]" cols="30" rows="10"></textarea>
+</div>
+
+<p (click)="addCard(4)">Action items</p>
+<div *ngFor="let card of type4; index as i;">
+  <textarea [(ngModel)]="type4[i]" cols="30" rows="10"></textarea>
+</div>
