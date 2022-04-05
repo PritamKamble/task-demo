@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Card, Category } from '../interfaces/card.interface';
+import { CardService } from '../service/card.service';
 
 @Component({
   selector: 'app-retrospective',
@@ -6,31 +8,34 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./retrospective.component.css'],
 })
 export class RetrospectiveComponent implements OnInit {
-  type1: string[] = [];
-  type2: string[] = [];
-  type3: string[] = [];
-  type4: string[] = [];
+  selectedCategoryId: number | null = null;
+  categoryDescription: string | null = null;
+  categories: Category[] = [];
 
-  constructor() {}
-
-  ngOnInit(): void {}
-
-  addCard(type: number) {
-    if (type == 1) {
-      this.type1.push('');
-    }
-    if (type == 2) {
-      this.type2.push('');
-    }
-    if (type == 3) {
-      this.type3.push('');
-    }
-    if (type == 4) {
-      this.type4.push('');
-    }
+  constructor(private cardService: CardService) {}
+  ngOnInit() {
+    this.cardService
+      .getCategories()
+      .subscribe((categories: Category[]) => (this.categories = categories));
   }
 
-  trackByIndex(index: number, obj: any): any {
-    return index;
+  openDialog(categoryId: number) {
+    this.selectedCategoryId = categoryId;
+  }
+
+  onSubmit() {
+    const card: Card = { description: this.categoryDescription || ''};
+    if (this.categories.length) {
+      const matchedCategory = this.categories.find(
+        (category) => category.categoryId === this.selectedCategoryId
+      );
+      matchedCategory?.cards.push(card);
+    }
+    this.selectedCategoryId = null;
+    this.categoryDescription = null;
+  }
+
+  closeDialog() {
+    this.selectedCategoryId = null;
   }
 }

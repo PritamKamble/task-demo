@@ -1,0 +1,16 @@
+.card {
+  height: 100px;
+  width: 200px;
+  padding: 10px;
+  margin: 5px;
+}
+
+.description-area {
+  height: 85px;
+  width: 180px;
+  margin: auto;
+}
+
+.points-area {
+  color: rgb(70, 66, 66);
+}

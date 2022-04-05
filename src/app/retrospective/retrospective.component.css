@@ -1,0 +1,46 @@
+.main {
+  height: 100vh;
+  width: 100vw;
+  margin: 2vw;
+  padding: 0;
+}
+
+.overlay {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background-color: black;
+  opacity: 0.8;
+}
+.dialog {
+  left: 30%;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  width: 400px;
+  position: fixed;
+  top: 30%;
+  border-bottom-right-radius: 40px;
+  border-bottom-left-radius: 10px;
+  opacity: 1;
+  z-index: 12;
+}
+
+.form {
+  height: 80%;
+  width: 95%;
+}
+
+.form-group {
+  height: 100%;
+  width: 100%;
+}
+
+.textarea {
+  height: 85%;
+  width: 90%;
+  margin: 10px 10px 0;
+}

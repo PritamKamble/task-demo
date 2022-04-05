@@ -1,1 +1,37 @@
-/* You can add global styles to this file, and also import other style files */
+/* Add application styles & imports to this file! */
+.flex {
+  display: flex;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.center {
+  justify-content: center;
+  align-items: center;
+}
+
+.w-50 {
+  width: 50vw;
+}
+
+.flex-row-right {
+  justify-content: flex-end;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.float-left {
+  float: left;
+}
+
+.h-50 {
+  height: 50vh;
+}
